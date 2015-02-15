@@ -1,0 +1,37 @@
+﻿@using Monthlybills.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<div class ="row" style=" background-image:url(/img/nyc.jpg) ; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:auto" >
+
+
+
+    <div class="text-center text-capitalize" style="padding-top:150px;">
+        <p style="font-size:35px; color:white;">Dioscar & Cristina Monthtly Bills</p>
+    </div>
+    
+        <div class="col-md-offset-5 col-md-4" style="padding-top:100px; padding-bottom:600px;">
+
+
+
+            <section id="socialLoginForm">
+                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            </section>
+
+
+
+        </div>
+    </div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
