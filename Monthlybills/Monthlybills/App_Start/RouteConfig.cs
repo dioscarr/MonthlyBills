@@ -19,6 +19,7 @@ namespace Monthlybills
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
             );
+            routes.MapRoute(name: "signin-google", url: "signin-google", defaults: new { controller = "Account", action = "Login" });
         }
     }
 }
