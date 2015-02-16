@@ -6,6 +6,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Monthlybills.Models;
+using System.Web.Helpers;
+using System.Security.Claims;
 
 namespace Monthlybills
 {
@@ -57,6 +59,9 @@ namespace Monthlybills
             //app.UseFacebookAuthentication(
             //   appId: "",
             //   appSecret: "");
+            
+            AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.Email;
+            
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
